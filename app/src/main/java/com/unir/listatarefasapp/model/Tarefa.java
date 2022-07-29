@@ -1,6 +1,8 @@
 package com.unir.listatarefasapp.model;
 
-public class Tarefa {
+import java.io.Serializable;
+
+public class Tarefa implements Serializable {
 
     private long id;
     private String nomeTarefa;

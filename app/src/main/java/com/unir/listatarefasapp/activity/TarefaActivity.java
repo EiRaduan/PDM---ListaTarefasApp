@@ -3,6 +3,7 @@ package com.unir.listatarefasapp.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +24,12 @@ public class TarefaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarefa);
         editTarefa = findViewById(R.id.textTarefa);
+        Intent intent = getIntent();
+        tarefaAtual = intent.getSerializableExtra("tarefaSelecionada");
+
+        if(tarefaAtual != null){
+            editTarefa.setText(tarefaAtual.getNomeTarefa());
+        }
     }
 
     @Override
